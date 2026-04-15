@@ -18,9 +18,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-
 # decision log
-- no src directory, for simplicity 
+
+- no src directory, for simplicity
 - no api endpoint needed as its public api withouh auth
 - simplified feature based folder structure to keep it scalable and readable
 - created a simple design token system to improve DX and make it easier to keep style consistency.
@@ -29,14 +29,16 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 - added react query stale level query to prevent refetch on stale data.
 
 # further prod improvements
-- Extract duplicated functionallity to helper functions 
+
+- Extract duplicated functionallity to helper functions
 - improve reactquery hooks to be more extensable using factories
 - better types, folder / directories, etc.
 - better const for endpoints/key
 - better folder separation inside features (hooks/services/types)
 - suspense/ssr improvements
-- add a11y 
+- add a11y
 - add testing layer
 
 # AI usage
+
 - pretty much for everything but project setup and some minor manual tweaks

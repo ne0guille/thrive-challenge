@@ -6,7 +6,8 @@ export function useCharacters() {
   return useQuery({
     queryKey: ["characters"],
     queryFn: async () => {
-      const { data } = await rickAndMortyClient.get<CharactersResponse>("/character");
+      const { data } =
+        await rickAndMortyClient.get<CharactersResponse>("/character");
       return data;
     },
     staleTime: Infinity,

@@ -8,7 +8,8 @@ export default function LocationsPage() {
   const { data, isLoading, isError } = useLocations();
 
   if (isLoading) return <DashboardState>Loading…</DashboardState>;
-  if (isError) return <DashboardState>Failed to load locations.</DashboardState>;
+  if (isError)
+    return <DashboardState>Failed to load locations.</DashboardState>;
   if (!data) return null;
 
   return (

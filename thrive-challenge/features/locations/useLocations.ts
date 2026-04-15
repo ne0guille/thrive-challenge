@@ -6,7 +6,8 @@ export function useLocations() {
   return useQuery({
     queryKey: ["locations"],
     queryFn: async () => {
-      const { data } = await rickAndMortyClient.get<LocationsResponse>("/location");
+      const { data } =
+        await rickAndMortyClient.get<LocationsResponse>("/location");
       return data;
     },
     staleTime: Infinity,

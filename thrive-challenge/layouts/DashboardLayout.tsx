@@ -1,7 +1,11 @@
 import type { ReactNode } from "react";
 import styled from "styled-components";
-import { Tab } from "@/components/Tab";
-import { DASHBOARD_TABS } from "@/components/constants";
+import { Tab, TabItem } from "@/components/Tab";
+
+export const DASHBOARD_TABS: TabItem[] = [
+  { label: "Characters", href: "/characters" },
+  { label: "Locations", href: "/locations" },
+];
 
 const Shell = styled.div`
   min-height: 100vh;
@@ -34,9 +38,9 @@ const Main = styled.main`
   margin: 0 auto;
 `;
 
- type DashboardLayoutProps = {
+type DashboardLayoutProps = {
   children: ReactNode;
-}
+};
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (

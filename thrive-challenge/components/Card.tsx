@@ -9,7 +9,8 @@ const Wrapper = styled.article`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform ${({ theme }) => theme.durations.fast} ease,
+  transition:
+    transform ${({ theme }) => theme.durations.fast} ease,
     box-shadow ${({ theme }) => theme.durations.fast} ease;
 
   &:hover {

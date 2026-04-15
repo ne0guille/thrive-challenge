@@ -7,9 +7,9 @@ export interface TabItem {
   href: string;
 }
 
- type TabProps = {
+type TabProps = {
   items: TabItem[];
-}
+};
 
 const Bar = styled.nav`
   display: flex;
@@ -20,13 +20,14 @@ const Bar = styled.nav`
 `;
 
 const TabLink = styled(Link)<{ $active: boolean }>`
-  padding: ${({ theme }) => `${theme.space.md} ${theme.space.md}`};
+  padding: ${({ theme }) => theme.space.md};
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   color: ${({ theme }) => theme.colors.textSubtle};
   text-decoration: none;
   border-bottom: 2px solid transparent;
-  transition: color ${({ theme }) => theme.durations.fast} ease,
+  transition:
+    color ${({ theme }) => theme.durations.fast} ease,
     border-color ${({ theme }) => theme.durations.fast} ease;
 
   &:hover {
@@ -43,7 +44,7 @@ const TabLink = styled(Link)<{ $active: boolean }>`
 
 export function Tab({ items }: TabProps) {
   const { pathname } = useRouter();
-
+  const isTabActive = (href: string) => pathname === href;
   return (
     <Bar>
       {items.map((item) => (
@@ -51,7 +52,8 @@ export function Tab({ items }: TabProps) {
           key={item.href}
           href={item.href}
           scroll={false}
-          $active={pathname === item.href}
+          $active={isTabActive(item.href)}
+          aria-current={isTabActive(item.href) ? "page" : undefined}
         >
           {item.label}
         </TabLink>

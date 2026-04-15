@@ -8,7 +8,8 @@ export default function CharactersPage() {
   const { data, isLoading, isError } = useCharacters();
 
   if (isLoading) return <DashboardState>Loading…</DashboardState>;
-  if (isError) return <DashboardState>Failed to load characters.</DashboardState>;
+  if (isError)
+    return <DashboardState>Failed to load characters.</DashboardState>;
   if (!data) return null;
 
   return (

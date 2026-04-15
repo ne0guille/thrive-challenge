@@ -33,8 +33,8 @@ const Dot = styled.span<{ $status: CharacterStatus }>`
     $status === "Alive"
       ? theme.colors.success
       : $status === "Dead"
-      ? theme.colors.danger
-      : theme.colors.neutral};
+        ? theme.colors.danger
+        : theme.colors.neutral};
 `;
 
 type CharacterCardProps = {
@@ -42,7 +42,10 @@ type CharacterCardProps = {
   priority?: boolean;
 };
 
-export function CharacterCard({ character, priority = false }: CharacterCardProps) {
+export function CharacterCard({
+  character,
+  priority = false,
+}: CharacterCardProps) {
   const { image, name, status, species } = character;
   return (
     <Card
